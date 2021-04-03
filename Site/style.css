@@ -1,0 +1,301 @@
+/* Commun à toutes les pages */
+html,
+body {
+    background-color: rgb(240, 240, 240);
+    margin: auto;
+    font-family:'Open Sans', sans-serif;
+}
+
+h1 {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0.1rem;
+}
+
+h2 {
+    font-size: large;
+    color: rgb(8, 8, 8);
+}
+
+.head,
+.nav,
+.foot {
+    background-color:rgba(12, 12, 12, 0.795);
+    color: rgba(255, 255, 255, 0.849);
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.head {
+    grid-area: head;
+    min-width: 550px;
+}
+
+.logo {
+    width: 70px;
+    margin: 15px 40px 10px 10px;
+}
+
+.logo,
+.photo {
+    border-radius: 50%;
+}
+
+.nav {
+    grid-area: nav;
+}
+
+[class^="bouton"] {
+    color: white;
+    background-color: rgb(119, 119, 119);
+    margin: 20px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 2px solid white;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: background-color 200ms ease 0ms;
+}
+
+[class^="bouton"]:hover{
+    background-color: rgba(255, 255, 255, 0.719);
+    color: black;
+}
+
+.logoHome {
+    width: 30px;
+}
+
+.logoMail {
+    width: 30px;
+}
+
+.foot {
+    grid-area: foot;
+    padding: 8px;
+}
+
+/* Contenu de la page accueil */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "head nav"
+    "barreinfos barreinfos"
+    "main main"
+    "foot foot" ;
+}
+
+.barreinfos {
+    grid-area: barreinfos;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 75px 100px;
+    padding: 0 30px;
+}
+
+.photo {
+    width: 12vw;
+    min-width: 150px;
+    margin: 40px 15px;
+}
+
+.presentation,
+.infos {
+    background-color: rgba(176, 204, 189, 0.651);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.presentation {
+    padding: 0 25px;
+    margin: 10px;
+    width: 30vw;
+    min-width: 230px;
+}
+
+.infos {
+    display: flex;
+    padding: 0 30px;
+    margin: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 12vw;
+    min-width: 230px;
+}
+
+.titleinfos {
+    margin: 16px 0 10px 0;
+}
+
+.textinfos {
+    margin: 0 0 16px 0;
+}
+
+a {
+    color: rgb(41, 41, 41);
+}
+
+.linkedin {
+    width: 30px;
+    margin-top: 10px;
+}
+
+.main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.formations,
+.pro,
+.tech,
+.comportement,
+.hobbies,
+.social,
+form {
+    background-color: rgba(176, 204, 189, 0.651);
+    border-radius: 20px;
+    padding: 0 25px 5px 25px;
+    margin: 15px 50px;
+    width: 45vw;
+    min-width: 300px;
+}
+
+.social {
+    margin: 15px 50px 50px 50px;
+}
+
+/* Contenu de la page contact */
+.container2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "head nav"
+    "main2 main2"
+    "foot foot" ;
+}
+
+.main2 {
+    grid-area: main2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+}
+
+form {
+    margin: 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.formNom,
+.formPrenom,
+.formEmail,
+.formTel,
+.formText,
+.formBouton {
+    margin: 10px;
+}
+
+.labelNom,
+.labelPrenom,
+.labelEmail,
+.labelTel,
+.labelText {
+    margin: 10px;
+    padding: 10px;
+    
+}
+
+#nom,
+#prenom,
+#email,
+#tel,
+textarea {
+    min-width: 200px;
+    padding: 8px;
+}
+
+textarea {
+    width: 30vw;
+}
+
+button {
+    padding: 5px 15px;
+    border-radius: 1rem;
+    background-color: rgb(41, 41, 41);
+    border: 2px solid rgb(119, 119, 119);
+    color: white;
+    cursor: pointer;
+    transition: background-color 200ms ease 0ms;
+}
+
+button:hover{
+    background-color: rgba(255, 255, 255, 0.719);
+    color: black;
+}
+
+/* Partie responsive */
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-areas:
+        "head"
+        "nav"
+        "barreinfos"
+        "main"
+        "foot" ;
+    }
+
+    .container2 {
+        grid-template-areas:
+        "head"
+        "nav"
+        "main2"
+        "foot" ;
+    }
+
+    .boutonAccueil {
+        display: none;
+    }
+
+    .boutonContact {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .boutonAccueil {
+        display: none;
+    }
+
+    .boutonContact {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .boutonAccueilmobile {
+        display: none;
+    }
+
+    .boutonContactmobile {
+        display: none;
+    }
+}
